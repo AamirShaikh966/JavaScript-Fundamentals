@@ -13,7 +13,6 @@ const checkWinner = (avgDolhins, avgKoalas) => {
     return -1;
   }
 };
-
 const avgDolhins = calcAvg(85, 54, 41);
 const avgKoalas = calcAvg(23, 34, 27);
 console.log(
