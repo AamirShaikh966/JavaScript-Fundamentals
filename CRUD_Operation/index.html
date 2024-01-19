@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD - Operation</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body onload="readAll()">
+    <h1>CRUD - Operation (With the use of Local-Storage)</h1>
+    <div class="container">
+      <div class="form_container">
+        <form class="create_form">
+          <input type="text" class="name" placeholder="Enter Name" />
+          <input type="email" class="email" placeholder="Enter Email" />
+          <button type="button" onclick="add()">Create</button>
+        </form>
+
+        <form class="update_form">
+          <input type="text" hidden class="id" />
+          <input type="text" id="name" class="uname" />
+          <input type="email" id="email" class="uemail" />
+          <button type="button" onclick="update()">Update</button>
+          <button type="button" onclick="cancel()">Cancel</button>
+        </form>
+        <div class="add_div">
+          <button onclick="create()">Add +</button>
+        </div>
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
+          </thead>
+          <tbody class="data_table"></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>
