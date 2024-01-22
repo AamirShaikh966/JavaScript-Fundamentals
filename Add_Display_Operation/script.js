@@ -1,16 +1,31 @@
-let users = [];
+// let users = ["aamir", "suraj"];
 
-function addUser() {
-  let template = users.map((user) => `<li>${user}</li>`).join("\n");
-  document.querySelector("ul").innerHTML = template;
-}
+// function viewUser() {
+//   let template = users
+//     .map(
+//       (user) =>
+//         `<li>${user} <button onclick={btndel('${user}')}> Delete </button></li>`
+//     )
+//     .join("\t");
+//   document.querySelector("ul").innerHTML = template;
+// }
 
-addUser();
-let btnAdd = document.querySelector("button");
-let input = document.querySelector("input");
+// function btndel(user) {
+//   console.log(user);
+//   let a = users.filter(function (element) {
+//     return element !== user;
+//   });
+//   console.log(a);
+// }
+// viewUser();
 
-btnAdd.addEventListener("click", () => {
-  users.push(input.value);
-  input.value = "";
-  addUser();
-});
+// let btnAdd = document.querySelector("button");
+// let input = document.querySelector("input");
+
+// function adduser() {
+//   // console.log("for adding");
+//   users.push(input.value);
+//   viewUser();
+// }
+
+// btnAdd.addEventListener("click", adduser);

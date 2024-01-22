@@ -44,6 +44,7 @@ function add() {
 }
 
 function edit(id) {
+  // console.log(id, "id here");
   document.querySelector(".update_form").style.display = "block";
   var obj = data.find((rec) => rec.id === id);
 
