@@ -9,6 +9,7 @@ function viewUser() {
     .join("\t");
 
   document.querySelector("ul").innerHTML = template;
+  clearform();
 }
 function btnedt(index) {
   let editedValue = prompt("Enter a value ");
@@ -42,3 +43,8 @@ function addUser() {
   viewUser();
 }
 btnAdd.addEventListener("click", addUser);
+
+// clr form
+function clearform() {
+  document.getElementById("fieldValue").value = "";
+}
