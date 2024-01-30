@@ -16,10 +16,10 @@ const btnHold = document.querySelector(".btn--hold");
 
 const diceEl = document.querySelector(".dice");
 
-// Starting Conditions
 let scores, currentScore, activePlayer, playing;
 
 const init = function () {
+  // Starting Conditions
   scores = [0, 0];
   currentScore = 0;
   activePlayer = 0;
@@ -48,7 +48,7 @@ const switchPlayer = function () {
 };
 
 // Rolling Dice Functionality
-btnRoll.addEventListener("click", function () {
+const rollDice = function () {
   if (playing) {
     // 1.Generating a Random Dice Roll
     const dice = Math.trunc(Math.random() * 6) + 1;
@@ -69,10 +69,11 @@ btnRoll.addEventListener("click", function () {
       switchPlayer();
     }
   }
-});
+};
+btnRoll.addEventListener("click", rollDice);
 
 // When player click on hold button
-btnHold.addEventListener("click", function () {
+const holdbtn = function () {
   if (playing) {
     // Add current score to active player's score
     scores[activePlayer] += currentScore;
@@ -97,7 +98,9 @@ btnHold.addEventListener("click", function () {
       switchPlayer();
     }
   }
-});
+};
+
+btnHold.addEventListener("click", holdbtn);
 
 // To Reset The Game
 btnNew.addEventListener("click", init);
