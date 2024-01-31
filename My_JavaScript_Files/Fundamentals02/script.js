@@ -303,37 +303,57 @@
 //   dice = Math.trunc(Math.random() * 5) + 1;
 // }
 
-function calcTip(bill) {
-  if (bill >= 50 && bill <= 300) {
-    bill = bill * 0.15;
-    return bill;
-  } else {
-    bill = bill * 0.2;
-    return bill;
-  }
-}
-const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
-let tips = [];
-let totalValue = [];
+// function calcTip(bill) {
+//   if (bill >= 50 && bill <= 300) {
+//     bill = bill * 0.15;
+//     return bill;
+//   } else {
+//     bill = bill * 0.2;
+//     return bill;
+//   }
+// }
+// const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+// let tips = [];
+// let totalValue = [];
 
-for (let i = 0; i < bills.length; i++) {
-  const tip = calcTip(bills[i]);
-  tips.push(tip);
-  // console.log(`Tip of bill ${bills[i]} is ${tip}.`);
-  totalValue.push(tip + bills[i]);
-  // console.log(`Total amount = ${totalValue[i]} `);
-}
-console.log("Here are each bills : ", bills);
-console.log("Here are the tips of each bills : ", tips);
-console.log("Here is the list of total bills : bill + tip ", totalValue);
+// for (let i = 0; i < bills.length; i++) {
+//   const tip = calcTip(bills[i]);
+//   tips.push(tip);
+//   // console.log(`Tip of bill ${bills[i]} is ${tip}.`);
+//   totalValue.push(tip + bills[i]);
+//   // console.log(`Total amount = ${totalValue[i]} `);
+// }
+// console.log("Here are each bills : ", bills);
+// console.log("Here are the tips of each bills : ", tips);
+// console.log("Here is the list of total bills : bill + tip ", totalValue);
 
-const calcAvg = function (arr) {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-  }
-  return sum / arr.length;
-};
-console.log("Bills Average : ", calcAvg(bills));
-console.log("Tips Average : ", calcAvg(tips));
-console.log("Total Bills Average : ", calcAvg(totalValue));
+// const calcAvg = function (arr) {
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+//   }
+//   return sum / arr.length;
+// };
+// console.log("Bills Average : ", calcAvg(bills));
+// console.log("Tips Average : ", calcAvg(tips));
+// console.log("Total Bills Average : ", calcAvg(totalValue));
+
+// function one() {
+//   two();
+//   console.log("From One");
+// }
+// function two() {
+//   three();
+//   console.log("From Two");
+// }
+// function three() {
+//   console.log("From Three");
+// }
+// one();
+
+function greet() {
+  console.log(name); // "undefined"
+  var name = "John Doe";
+}
+
+greet();
