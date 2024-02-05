@@ -270,6 +270,82 @@
 // ];
 // console.log(users[0]?.name ?? "user array empty");
 
+// To get the properties/keys name
+// const properties = Object.keys(openingHours);
+// let openStr = `Restaurant is open on ${properties.length} days`;
+
+// for (const day of properties) {
+//   openStr += ` ${day}, `;
+// }
+// console.log(openStr);
+
+// To get the properties/keys values
+// const values = Object.values(openingHours);
+// console.log(values);
+
+// Entire object
+// const entries = Object.entries(openingHours);
+// console.log(entries);
+
+// for (const [day, { open, close }] of entries) {
+//   console.log(`On ${day} we open at ${open} and close at ${close}`);
+// }
+
+////////////---SETTTTTTT---//////////////////////////////////////////////////
+
+// const orderSet = new Set(["pizza", "pasta", "maggie", "pizza", "pasta"]);
+// console.log(orderSet);
+// console.log(new Set("Jonas").size);
+// console.log(orderSet.has("pizza"));
+// console.log(orderSet.has("Pizza"));
+// orderSet.add("Garlic Bread", "Garlic Bread");
+// orderSet.delete("maggie");
+// // orderSet.clear();
+// console.log(orderSet);
+
+// for (const order of orderSet) {
+//   console.log(order);
+// }
+
+// const staff = ["chef", "waiter", "manager", "waiter", "chef", "waiter"];
+// const staffUnique = [...new Set(staff)];
+// console.log(staffUnique);
+// console.log(
+//   new Set(["chef", "waiter", "manager", "waiter", "chef", "waiter"]).size
+// );
+
+// // Maps
+// const rest = new Map();
+// rest.set("Name", "La Pinoz Pizza");
+// rest.set(1, "West Bank, Riverfront ");
+// console.log(rest.set(2, "Kankaria, Maninagar"));
+
+// rest
+//   .set("categories", ["Italian", "Pizzeria", "Vegetarian", "Organic"])
+//   .set("open", 11)
+//   .set("close", 24)
+//   .set(true, "We are open :D")
+//   .set(false, "We are close :(");
+// console.log(rest);
+// console.log(rest.get("Name"));
+// console.log(rest.get(true));
+// console.log(rest.get(1));
+
+// const time = 8;
+// console.log(rest.get(time > rest.get("open") ?? time < rest.get("close")));
+// console.log(rest.has("categories"));
+// rest.delete(2);
+// console.log(rest.size);
+// // rest.clear();
+
+// // To set the array as a key
+// const arr = [1, 2];
+// rest.set(arr, "Test");
+// console.log(rest.get(arr));
+
+// rest.set(document.querySelector("h1"), "Heading");
+// console.log(rest);
+
 // const weekDays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
 // const openingHours = {
@@ -294,16 +370,16 @@
 //   starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
 //   mainMenu: ["Pizza", "Pasta", "Risotto"],
 
-// ES6 Enhanced Object literals
-// Must be the same variable name
-// openingHours,
+//   // ES6 Enhanced Object literals
+//   // Must be the same variable name
+//   // openingHours,
 
-// Old way to write methods
-// order: function (starterIndex, mainIndex) {
-//   return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-// },
+//   // Old way to write methods
+//   order: function (starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
 
-// New ES6 way to write methods
+//   // New ES6 way to write methods
 //   orderDelivery({ time, address, mainIndex, starterIndex }) {
 //     console.log(
 //       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
@@ -321,44 +397,132 @@
 //   },
 // };
 
-// To get the properties/keys name
-// const properties = Object.keys(openingHours);
-// let openStr = `Restaurant is open on ${properties.length} days`;
+// const question = new Map([
+//   ["question", "What is the best programming langauge in the world ?"],
+//   [1, "C"],
+//   [2, "Java"],
+//   [3, "JavaScript"],
+//   ["correct", 3],
+//   [true, "Correct 🎉"],
+//   [false, "Try again ⛔"],
+// ]);
+// console.log(question);
 
-// for (const day of properties) {
-//   openStr += ` ${day}, `;
+// // Convert object to map
+// const hoursMap = new Map(Object.entries(openingHours));
+// console.log(hoursMap);
+
+// // Quiz App
+// for (const [key, value] of question) {
+//   if (typeof key === "number") {
+//     console.log(`Answer ${key} : ${value}`);
+//   }
 // }
-// console.log(openStr);
+// const answer = Number(prompt("Your Answer...???"));
+// console.log(question.get(question.get("correct") === answer));
 
-// To get the properties/keys values
-// const values = Object.values(openingHours);
-// console.log(values);
+// // Convert map to an array
+// console.log([...question]);
+// console.log([...question.keys()]);
+// console.log([...question.values()]);
 
-// Entire object
-// const entries = Object.entries(openingHours);
-// console.log(entries);
+// Strings
+// const airline = "TAP Air Portugal";
+// const plane = "A320";
 
-// for (const [day, { open, close }] of entries) {
-//   console.log(`On ${day} we open at ${open} and close at ${close}`);
-// }
+// console.log(airline.slice(4, 9));
+// console.log(airline.slice(0, airline.indexOf(" ")));
+// console.log(airline.slice(airline.lastIndexOf(" ") + 1));
 
-const orderSet = new Set(["pizza", "pasta", "maggie", "pizza", "pasta"]);
-console.log(orderSet);
-console.log(new Set("Jonas").size);
-console.log(orderSet.has("pizza"));
-console.log(orderSet.has("Pizza"));
-orderSet.add("Garlic Bread", "Garlic Bread");
-orderSet.delete("maggie");
-// orderSet.clear();
-console.log(orderSet);
+// console.log(airline.slice(-2));
+// console.log(airline.slice(1, -1));
 
-for (const order of orderSet) {
-  console.log(order);
-}
+// const checkMiddleSeat = function (seat) {
+//   const s = seat.slice(-1);
+//   if (s === "B" || s === "E") console.log("You got the middle seat 😱");
+//   else console.log("You got the lucky seat 🥳");
+// };
 
-const staff = ["chef", "waiter", "manager", "waiter", "chef", "waiter"];
-const staffUnique = [...new Set(staff)];
-console.log(staffUnique);
-console.log(
-  new Set(["chef", "waiter", "manager", "waiter", "chef", "waiter"]).size
-);
+// checkMiddleSeat("11B");
+// checkMiddleSeat("23C");
+// checkMiddleSeat("3E");
+
+// console.log(new String("Aamir"));
+
+// const passenger = "aAmIr";
+// const passengerLower = passenger.toLowerCase();
+// const passengerCorrect =
+// passengerLower[0].toUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect);
+
+// const email = "aamir@shaikh.io";
+// const loggedEmail = "         AaMiR@sHaIkH.\n io";
+
+// const normalizedEmail = loggedEmail.toLowerCase().trim();
+// console.log(normalizedEmail);
+
+// Replacing
+// const priceGB = "288,97$";
+// const priceDoller = priceGB.replace("$", "^").replace(",", ".");
+// console.log(priceDoller);
+
+const announcement =
+  "All the passangers come to the boarding door 23. Boarding door 23!";
+// console.log(announcement.replace(/door/g, "gate"));
+// console.log(announcement.replaceAll("door", "gate"));
+
+// Boolean
+// console.log(plane.includes("A3"));
+// console.log(plane.includes("A31"));
+// console.log(announcement.startsWith("All"));
+
+// Split and join
+
+// console.log("a+very+nice+string".split("+"));
+// const [firstName, lastName] = "Aamir Shaikh".split(" ");
+// console.log(firstName, lastName);
+// const newName = ["Mr.", firstName, lastName.toUpperCase()].join(" ");
+// console.log(newName);
+
+// const capitalizeName = function (name) {
+//   const names = name.split(" ");
+//   const nameUpperCase = [];
+
+//   for (const n of names) {
+//     // nameUpperCase.push(n[0].toUpperCase() + n.slice(1));
+//     nameUpperCase.push(n.replace(n[0], n[0].toUpperCase()));
+//   }
+//   console.log(nameUpperCase.join(" "));
+// };
+
+// capitalizeName("aamir sohel shaikh");
+// capitalizeName("maksad bhai");
+// capitalizeName("suraj pithwa");
+
+// Padding
+const message = "go to gate 23";
+// console.log(message.padStart(300, announcement));
+
+// const maskCreditCard = function (number) {
+//   const str = number + "";
+//   const last = str.slice(-4);
+//   return last.padStart(str.length, "*");
+// };
+// console.log(maskCreditCard(10101010192010209));
+// console.log(maskCreditCard(12091201992));
+// console.log(maskCreditCard(9749832741));
+// console.log(maskCreditCard(9212834));
+
+// Repeat
+const message2 = "Bad weather... All departures delayed... ";
+console.log(message2.repeat(message.length));
+
+const planeInLine = function (n) {
+  console.log(`There are ${n} Planes in lines ${"✈".repeat(n)}`);
+};
+planeInLine(2);
+planeInLine(1);
+planeInLine(7);
+planeInLine(9);
+planeInLine(0);
+planeInLine(6);
