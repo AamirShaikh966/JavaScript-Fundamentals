@@ -135,6 +135,58 @@ book.apply(swiss, bookData);
 
 book.call(lufthansa, ...bookData);
 
+// BIND Method
+const bookLH = book.bind(lufthansa);
+const bookEW = book.bind(euroWings);
+const bookSW = book.bind(swiss);
+
+bookLH(910, "Rohit Sharma");
+bookEW(90, "Virat Kohli");
+bookSW(920, "KL Rahul");
+
+// We can also pass the value inside bind method
+const bookLH9012 = book.bind(lufthansa, 9012);
+bookLH9012("Rishabh Pant");
+bookLH9012("Manish Pandey");
+
 console.log(lufthansa);
 console.log(euroWings);
 console.log(swiss);
+
+// With Event Listener
+lufthansa.planes = 300;
+lufthansa.buyPlanes = function () {
+  console.log(this);
+
+  this.planes++;
+  console.log(this.planes);
+};
+document
+  .querySelector(".buy")
+  .addEventListener("click", lufthansa.buyPlanes.bind(lufthansa));
+
+// Partial Application
+const addTax = (rate, value) => value + value * rate;
+// console.log(addTax(0.1, 200));
+
+// const addVAT = addTax.bind(null, 0.23);
+// addVAT = (value) => value + value * 0.23;
+// console.log(addVAT(900));
+// console.log(addVAT(12));
+// console.log(addVAT(89032));
+// console.log(addVAT(9012));
+// console.log(addVAT(743075));
+// console.log(addVAT(6973));
+
+const addVAT = (rate) => (value) => value + value * rate;
+const addVAT2 = addVAT(0.2);
+console.log(addVAT2(200));
+
+// Using normal function
+// const addTaxRate = function (rate) {
+//   return function (value) {
+//     return value + value * rate;
+//   };
+// };
+// const addVAT3 = addTaxRate(0.2);
+// console.log(addVAT3(200));
