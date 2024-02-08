@@ -86,7 +86,7 @@ greeter("Aamir");
 // Same Function using arrow function
 const greet = (greeting) => (name) => console.log(`${greeting} ${name}`);
 greet("Hiii")("Sohail");
-*/
+
 const bookings = [];
 
 const lufthansa = {
@@ -190,3 +190,55 @@ console.log(addVAT2(200));
 // };
 // const addVAT3 = addTaxRate(0.2);
 // console.log(addVAT3(200));
+
+// Immediately Invoked Function Expression :: IIFE
+(function () {
+  console.log("This will never run again after executing once");
+})();
+
+(() => console.log("This will ALSO never run again after executing once"))();
+const secureBooking = function () {
+  let passengerCount = 0;
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} Passengers`);
+  };
+};
+const booker = secureBooking();
+// booker();
+// booker();
+// booker();
+console.dir(booker);
+
+let f;
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 200;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g();
+f();
+
+//Re-assigning f function
+h();
+f();
+*/
+const boardPassangers = function (n, wait) {
+  const perGrp = n / 3;
+  setTimeout(function () {
+    console.log(`We are now boarding all ${n} passangers.`);
+    console.log(`There are 3 groups each with ${perGrp} passengers.`);
+  }, wait * 1000);
+  console.log(`We all starting boarding in ${wait} seconds.`);
+};
+
+boardPassangers(150, 5);
