@@ -49,7 +49,6 @@ console.log(arr.at(-1));
 
 console.log('jonas'.at(0));
 console.log('jonas'.at(-1));
-*/
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
@@ -87,3 +86,52 @@ const currenciesUnique = new Set(["USD", "EUR", "GBP"]);
 currenciesUnique.forEach(function (value, _, map) {
   console.log(`${value} : ${value}`);
 });
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const eurToUSD = 1.1;
+const movementsUSD = movements.map((mov) => mov * eurToUSD);
+console.log(movements);
+console.log(movementsUSD);
+
+// Same thing using ForOf loop
+const movementsUSDFor = [];
+for (const mov of movements) {
+  movementsUSDFor.push(mov * eurToUSD);
+}
+
+console.log(movementsUSDFor);
+
+const movementDescription = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1} : You ${mov > 0 ? "Deposited" : "Withdrew"} ${Math.abs(
+      mov
+    )}`
+);
+console.log(movementDescription.join("\n"));
+
+// FILTER
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+console.log(movements);
+
+const deposit = movements.filter((mov) => mov > 0);
+console.log(deposit);
+
+const withdrawals = movements.filter((mov) => mov < 0);
+console.log(withdrawals);
+
+// REDUCE
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+console.log(movements);
+// const balance = movements.reduce((acc, curr, i) => {
+//   console.log(`Iteration ${i} : Acc is ${acc} = ${curr} + ${acc}`);
+//   return acc + curr;
+// }, 0);
+// console.log(`Total of Movements is ${balance}`);
+
+const maximum = movements.reduce((acc, curr) => {
+  return acc > curr ? `${acc}` : `${curr}`;
+}, 0);
+console.log(maximum);
+*/
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
