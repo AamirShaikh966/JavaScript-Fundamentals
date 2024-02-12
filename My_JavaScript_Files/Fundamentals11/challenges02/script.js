@@ -3,20 +3,28 @@
 const calcAverageHumanAge = (ages) => {
   console.log("Original Data is : " + ages);
 
-  const humanAges = ages.map((age) => (age <= 2 ? 2 * age : 16 + age * 4));
+  const humanAges = ages
+    .map((age) => (age <= 2 ? 2 * age : 16 + age * 4))
+    .filter((age, i, arr) => {
+      // console.log(arr);
+      return age > 18;
+    })
+    .reduce((acc, age, i, arr) => {
+      // console.log(arr);
+      return acc + age / arr.length;
+    }, 0);
   console.log(humanAges);
 
-  const excludeAges = humanAges.filter((age) => age > 18);
-  console.log(excludeAges);
+  // const excludeAges = humanAges.filter((age) => age > 18);
+  // console.log(excludeAges);
 
   // const averageAge = excludeAges.reduce(
   //   (acc, age, i, arr) => acc + age / arr.length,
   //   0
   // );
-
-  const averageAge =
-    excludeAges.reduce((acc, age, arr) => acc + age, 0) / excludeAges.length;
-  console.log(`Average Age is : ${averageAge}`);
+  // const averageAge =
+  //   excludeAges.reduce((acc, age, arr) => acc + age, 0) / excludeAges.length;
+  // console.log(`Average Age is : ${averageAge}`);
 };
 
 calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
