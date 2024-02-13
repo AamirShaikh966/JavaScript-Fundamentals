@@ -113,10 +113,12 @@ btnLogin.addEventListener("click", (e) => {
 });
 
 // To display the movements/Entries
-const displayMovements = (movements) => {
+const displayMovements = (movements, sort = false) => {
   containerMovements.innerHTML = "";
 
-  movements.forEach((mov, i) => {
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  movs.forEach((mov, i) => {
     const type = mov > 0 ? "deposit" : "withdrawal";
 
     const html = `
@@ -214,6 +216,15 @@ btnLoan.addEventListener("click", (e) => {
   inputLoanAmount.value = "";
 });
 
+// To sort the movements
+let sorted = false;
+btnSort.addEventListener("click", (e) => {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+
+  sorted = !sorted;
+});
+
 // To close the Account
 btnClose.addEventListener("click", (e) => {
   e.preventDefault();
@@ -236,4 +247,11 @@ btnClose.addEventListener("click", (e) => {
     labelWelcome.textContent = `Log in to get started`;
   }
   inputCloseUsername.value = inputClosePin.value = "";
+});
+labelBalance.addEventListener("click", () => {
+  const movementUI = Array.from(
+    document.querySelectorAll(".movements__value"),
+    (el) => Number(el.textContent.replace("$", ""))
+  );
+  console.log(movementUI);
 });

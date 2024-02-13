@@ -146,7 +146,6 @@ const totalDepositsUSD = movements
   .reduce((acc, mov) => acc + mov, 0);
 
 console.log(Math.trunc(Math.abs(totalDepositsUSD)));
-*/
 
 const account1 = {
   owner: "Jonas Schmedtmann",
@@ -180,3 +179,116 @@ const accounts = [account1, account2, account3, account4];
 
 const account = accounts.find((acc) => acc.owner === "Sarah Smith");
 console.log(account);
+
+// Flat method : it can go multiple level deep
+const overAllBalalnce = accounts
+  .map((acc) => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+// console.log(overAllBalalnce);
+
+// Flatmap method which is combination of flat and map method
+// this method will not go multiple level deep. to flatten the multiple level deep we need to use flat method
+const overAllBalalnce2 = accounts
+  .flatMap((acc) => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+// console.log(overAllBalalnce2);
+
+// Sort method
+console.log("Original Array");
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+console.log(movements);
+console.log("--------------------------------------------------");
+
+// This kind of sort method will not work if you have mix array like numbers, strings.
+console.log("Array in Ascending  order");
+// movements.sort((a, b) => {
+//   if (a > b) return 1;
+//   if (a < b) return -1;
+// });
+movements.sort((a, b) => a - b); // Return a
+console.log(movements);
+console.log("--------------------------------------------------");
+
+console.log("Array in Descending order");
+// movements.sort((a, b) => {
+//   if (a > b) return -1;
+//   if (a < b) return 1;
+// });
+movements.sort((a, b) => b - a);
+console.log(movements);
+
+const arr = Array.from({ length: 7 }, () => 1);
+console.log(arr);
+
+const z = Array.from({ length: 7 }, (_, index) => index + 1);
+console.log(z);
+
+const diceRoll = Array.from(
+  { length: 100 },
+  () => Math.trunc(Math.random() * 6) + 1
+);
+console.log(diceRoll);
+console.log(diceRoll.length);
+
+const account1 = {
+  owner: "Jonas Schmedtmann",
+  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+  interestRate: 1.2, // %
+  pin: 1111,
+};
+
+const account2 = {
+  owner: "Jessica Davis",
+  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+  interestRate: 1.5,
+  pin: 2222,
+};
+
+const account3 = {
+  owner: "Steven Thomas Williams",
+  movements: [200, -200, 340, -300, -20, 50, 400, -460],
+  interestRate: 0.7,
+  pin: 3333,
+};
+
+const account4 = {
+  owner: "Sarah Smith",
+  movements: [430, 1000, 700, 50, 90],
+  interestRate: 1,
+  pin: 4444,
+};
+
+const accounts = [account1, account2, account3, account4];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const { deposits, withdrawals } = accounts
+  .flatMap((acc) => acc.movements)
+  .reduce(
+    (sums, cur) => {
+      // cur > 0 ? (sums.deposits += cur) : (sums.withdrawals += cur);
+      sums[cur > 0 ? "deposits" : "withdrawals"] += cur;
+      return sums;
+    },
+    { deposits: 0, withdrawals: 0 }
+  );
+// console.log(deposits, withdrawals);
+*/
+
+const convertTitleCase = (title) => {
+  const capitalize = (str) => str[0].toUpperCase() + str.slice(1);
+
+  const exceptions = ["a", "and", "an", "the", "but", "or", "on", "in", "with"];
+
+  const titleCase = title
+    .toLowerCase()
+    .split(" ")
+    .map((word) => (exceptions.includes(word) ? word : capitalize(word)))
+    .join(" ");
+
+  return capitalize(titleCase);
+};
+
+console.log(convertTitleCase("this is a nice title"));
+console.log(convertTitleCase("this is a LONG title but not too long"));
+console.log(convertTitleCase("and there is another title with an EXAMPLE"));
