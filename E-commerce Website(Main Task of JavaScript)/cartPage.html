@@ -38,9 +38,22 @@
         referrerpolicy="no-referrer"
       />
 
+      <!-- Mail JS CDN -->
+      <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+      ></script>
+      <script type="text/javascript">
+        (() => {
+          emailjs.init({
+            publicKey: "CUlpXozY1Xlazh8HC",
+          });
+        })();
+      </script>
+
       <!-- Custom CSS -->
       <link rel="stylesheet" href="./style.css" />
-      <title>All Product Page</title>
+      <title>Cart Page</title>
     </head>
   </head>
   <body>
@@ -61,13 +74,7 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown">
-            <!-- <select class="prizeDropdown">
-              <option class="options_to_display" value="all" selected>
-                All The Products
-              </option>
-            </select> -->
-          </li>
+          <li class="nav-item dropdown"></li>
           <li class="nav-item">
             <a class="nav-link" href="#">New Arrivals</a>
           </li>
@@ -93,73 +100,73 @@
     </nav>
     <!-- Navigation Bar Ends -->
 
-    <!-- Product Listing Starts -->
-    <div class="container">
-      <!-- Filtering Section Starts -->
-
-      <!-- Filter based on Categories Starts -->
-      <select class="select_bar">
-        <option class="options_to_display" value="all" selected>
-          All The Products
-        </option>
-      </select>
-      <!-- Filter based on Categories Starts -->
-
-      <!-- Filter on Prize Starts -->
-      <select class="prizeDropdown">
-        <option value="all" selected>Select Prize</option>
-        <option value="below">Below $100</option>
-        <option value="more">More than $100</option>
-      </select>
-      <!-- Filter on Prize Ends -->
-
-      <!-- Search the Product -->
-      <input
-        class="mr-sm-2 search_bar"
-        id="searchbar"
-        type="search"
-        placeholder="Search For Products"
-        aria-label="Search"
-        name="searchbar"
-      />
-
-      <!-- Apply the Filter Button -->
-      <button type="submit" name="submit" class="filter__button">
-        Apply Filter
-      </button>
-      <br />
-      <!-- Filtering Section Ends -->
-
-      <!-- PRE-LOADER STARTS -->
-      <div class="loader-wrapper">
-        <div class="loader"></div>
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-      </div>
-      <!-- PRE-LOADER ENDS -->
-
-      <div class="row mt-4 all__products"></div>
+    <!-- PRE-LOADER STARTS -->
+    <div class="loader-wrapper">
+      <div class="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
     </div>
-    <!-- Product Listing Ends -->
-    <!-- Modal Code starts -->
-    <section class="modal hidden">
-      <div class="flex">
-        <img src="" alt="image" id="proIMG" />
-        <button class="btn-close" onclick="closeModal()">⨉</button>
-      </div>
-      <div>
-        <h3 id="proTitle"></h3>
-        <p id="proDesc" class="fs-6"></p>
-        <input type="hidden" id="proID" />
-      </div>
+    <!-- PRE-LOADER ENDS -->
 
-      <h3 id="proPrice"></h3>
-      <a href="#" class="href"
-        ><button class="btn-cart" onclick="addToCart()">Add to Cart</button></a
-      >
-    </section>
-    <div class="overlay hidden" onclick="closeModal()"></div>
-    <!-- Modal Code ends -->
+    <!-- Cart-Page Starts -->
+    <div class="container my-2">
+      <h1 class="message">YOUR CART</h1>
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <!-- CART DETAILS STARTS -->
+        <div class="col-lg-8 col-md-8 w-25 overflow-auto">
+          <div class="card rounded-3 mb-5">
+            <div
+              class="row d-flex justify-content-between align-items-center cart__products"
+            >
+              <!-- Cart Items  -->
+            </div>
+          </div>
+        </div>
+        <!-- CART DETAILS ENDS -->
+
+        <!-- ORDER SUMMARY STARTS -->
+        <div class="col-lg-4 summary">
+          <h3 class="my-4">Order Summary</h3>
+          <span class="order__summary"
+            ><p>Subtotal</p>
+            <p class="sub__total">$00.00</p></span
+          >
+          <span class="order__summary"
+            ><p class="discount__percentage">Discount</p>
+            <p class="discount__value">$00.00</p></span
+          >
+          <span class="order__summary"
+            ><p>Delivery Fee</p>
+            <p class="delivery__fee">$00.00</p></span
+          >
+          <span class="order__summary"
+            ><p>Total</p>
+            <p class="grand__total">$00.00</p></span
+          >
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Add promo code"
+              aria-label="Add promo code"
+              aria-describedby="basic-addon2"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button">
+                Apply
+              </button>
+            </div>
+          </div>
+          <div class="text-center my-2">
+            <button type="button" class="btncheckout">
+              Place Order <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+        <!-- ORDER SUMMARY ENDS -->
+      </div>
+    </div>
+    <!-- Cart-Page Ends-->
 
     <!-- Subscription Starts -->
     <div class="container text-white p-5 subscription">
@@ -327,8 +334,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script src="./script.js"></script>
+    <script src="./cart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

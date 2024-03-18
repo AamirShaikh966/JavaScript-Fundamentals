@@ -44,7 +44,7 @@
   <body>
     <!-- Navigation Bar Starts -->
     <nav class="container navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">SHOP.CO</a>
+      <a class="navbar-brand" href="./index.html">SHOP.CO</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -58,50 +58,28 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="./index.html"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Products
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <!-- <a class="dropdown-item" href="#">category-1</a>
-                <a class="dropdown-item" href="#">category-2</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">category-3</a>
-                <a class="dropdown-item" href="#">category-4</a> -->
-            </div>
+        <ul class="navbar-nav mr-auto navlinks">
+          <li class="nav-item">
+            <a class="nav-link sec-1" href="#section--1">New Arrivals</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">New Arrivals</a>
+            <a class="nav-link sec-2" href="#section--2">Top Sellings</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Top Sellings</a>
+            <a class="nav-link sec-4" href="#section--3">Dress Styles</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Testimonials</a>
+            <a class="nav-link sec-3" href="#section--4">Testimonials</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="text"
-            id="searchbar"
-            placeholder="Search For Products"
-            aria-label="Search"
-            name="searchbar"
-          />
-          <button class="btn my-2 my-sm-0" type="submit">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-          <button class="btn my-2 my-sm-0" type="submit">
+          <a href="./cartPage.html" class="">
+            <button class="btn my-2 my-sm-0" type="button">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="badge badge-success" id="lblCartCount"> </span>
+            </button>
+          </a>
+          <button class="btn my-2 my-sm-0" type="button">
             <i class="fa-regular fa-user"></i>
           </button>
         </form>
@@ -113,200 +91,295 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
-          <p class="bannerHeading">Find Clothes That Matches Your Style</p>
-          <p class="bannerText">
+          <p class="bannerHeading mt-5 mb-4">
+            Find Clothes That Matches Your Style
+          </p>
+          <p class="bannerText mb-4">
             Browse through our diverse range of meticulously crafted garments,
             designed to bring out your individuality and cater to your sense of
             style.
           </p>
           <a href="productPage.html" class="bannerButtonLink">
-            <button class="bannerButton">Shop Now</button></a
+            <button class="bannerButton mb-4">Shop Now</button></a
           >
-          <div class="row mt-5">
+          <div class="row">
             <div class="col-lg-4">
-              <h3><strong>200 +</strong></h3>
+              <h3>
+                <strong
+                  ><span class="number__value" akhi="200">0</span>+</strong
+                >
+              </h3>
               <p class="bannerText">Intenational Brands</p>
             </div>
             <div class="col-lg-4">
-              <h3><strong>2,000 +</strong></h3>
+              <h3>
+                <strong
+                  ><span class="number__value" akhi="2000">0</span>+</strong
+                >
+              </h3>
               <p class="bannerText">High-Quality Products</p>
             </div>
             <div class="col-lg-4">
-              <h3><strong>30,000 +</strong></h3>
+              <h3>
+                <strong
+                  ><span class="number__value" akhi="30000">0</span>+</strong
+                >
+              </h3>
               <p class="bannerText">Happy Customers</p>
             </div>
           </div>
         </div>
         <div class="col-lg-6">
-          <img
+          <!-- <img
             src="./assets/bannerImgCROPPED.png"
             alt="BannerImage"
             class="bannerimg"
+          /> -->
+          <img
+            src="./assets/bannerImgCROPPED.png"
+            class="rounded float-left w-100"
+            alt="BannerImage"
           />
         </div>
       </div>
     </div>
     <div class="container-fluid">
-      <div class="container my-3 py-3 brandsLogo">
-        <div class="row text-center">
-          <div class="col-lg-3">
-            <h1>VERSACE</h1>
-          </div>
-          <div class="col-lg-3">
-            <h1>ZARA</h1>
-          </div>
-          <div class="col-lg-3">
-            <h1>GUCCI</h1>
-          </div>
-          <div class="col-lg-3">
-            <h1>Calvin Klein</h1>
-          </div>
-        </div>
-      </div>
+      <marquee
+        ><span>VERSACE</span> <span>ZARA</span> <span>PRADA</span>
+        <span>GUCCI</span> <span>Calvein Klein</span></marquee
+      >
     </div>
 
     <!-- NEW ARRIVALS -->
-    <div class="container my-5 text-center">
-      <h1><strong>NEW ARRIVALS</strong></h1>
-      <div class="card-group my-5">
-        <div class="card">
-          <img src="./assets/Tshirt.png" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              <strong>$$$</strong>
-            </p>
+    <section class="section" id="section--1">
+      <div class="container my-5 text-center">
+        <h1><strong>NEW ARRIVALS</strong></h1>
+        <div class="row mt-4 all__products"></div>
+
+        <!-- <div class="card-group my-5">
+          <div class="card">
+            <img src="./assets/Tshirt.png" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                <strong>$$$</strong>
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <img src="./assets/Tshirt.png" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              <strong>$$$</strong>
-            </p>
+          <div class="card">
+            <img src="./assets/Tshirt.png" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                <strong>$$$</strong>
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <img src="./assets/Tshirt.png" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              <strong>$$$</strong>
-            </p>
+          <div class="card">
+            <img src="./assets/Tshirt.png" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                <strong>$$$</strong>
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <img src="./assets/Tshirt.png" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              <strong>$$$</strong>
-            </p>
+          <div class="card">
+            <img src="./assets/Tshirt.png" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                <strong>$$$</strong>
+              </p>
+            </div>
           </div>
-        </div>
+        </div> -->
+        <button class="viewMoreButton">View All</button>
       </div>
-      <button class="viewMoreButton">View All</button>
-    </div>
+    </section>
 
     <!-- Top Sellings Page Starts -->
-    <div class="container my-5 text-center">
-      <h1><strong>TOP SELLINGS</strong></h1>
-      <div class="row limited__products"></div>
+    <section class="section" id="section--2">
+      <div class="container my-5 text-center">
+        <h1 class="mb-5"><strong>TOP SELLINGS</strong></h1>
+        <div class="row limited__products"></div>
+      </div>
+    </section>
+
+    <!-- PRE-LOADER STARTS -->
+    <div class="loader-wrapper">
+      <div class="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
     </div>
+    <!-- PRE-LOADER ENDS -->
+
+    <!-- Modal Code starts -->
+    <section class="modal hidden">
+      <div class="flex">
+        <img src="" alt="image" id="proIMG" />
+        <button class="btn-close" onclick="closeModal()">⨉</button>
+      </div>
+      <div>
+        <h3 id="proTitle"></h3>
+        <p id="proDesc"></p>
+        <input type="hidden" id="proID" />
+      </div>
+
+      <h3 id="proPrice"></h3>
+      <a href="#" class="href"
+        ><button class="btn-cart" onclick="addToCart()">Add to Cart</button></a
+      >
+    </section>
+    <div class="overlay hidden" onclick="closeModal()"></div>
+    <!-- Modal Code ends -->
     <!-- Top Sellings Page Ends -->
 
-    <!-- BROWSE BY DRESS STYLE -->
-    <div class="container text-center">
-      <h1><strong>BROWSE BY DRESS STYLE</strong></h1>
-      <!-- <div class="row">
-        <div class="col-lg-4">
-          CASUAL
-          <a href="#" class="href"
-            ><img src="./assets/CASUAL.png" alt="" class="src"
-          /></a>
+    <!-- BROWSE BY DRESS STYLE Starts-->
+    <section class="section" id="section--3">
+      <div class="container text-center">
+        <h1 class="my-5"><strong>BROWSE BY DRESS STYLE</strong></h1>
+        <div class="row">
+          <div class="col-lg-4 col-md-12 col-sm-12">
+            <img src="./assets/CASUAL.png" alt="" class="" />
+            <div class="card-img-overlay">
+              <h5 class="card-title font-weight-bold">Men's Clothing</h5>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-12 col-sm-12">
+            <img src="./assets/formal.png" alt="" class="" />
+            <div class="card-img-overlay">
+              <h5 class="card-title font-weight-bold">Jewellary</h5>
+            </div>
+          </div>
         </div>
-        <div class="col-lg-6">
-          FORMAL
-          <a href="#" class="href"
-            ><img src="./assets/CASUAL.png" alt="" class="src"
-          /></a>
+        <div class="row mt-4">
+          <div class="col-lg-8 col-md-12 col-sm-12">
+            <img src="./assets/party.png" alt="" class="" />
+            <div class="card-img-overlay">
+              <h5 class="card-title font-weight-bold fs-2 ms-5">
+                Women's Clothing
+              </h5>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-sm-12">
+            <img src="./assets/gym.png" alt="" class="" />
+            <div class="card-img-overlay">
+              <h5 class="font-weight-bold">GYM</h5>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row my-5">
-        <div class="col-lg-6">
-          PARTY
-          <a href="#" class="href"
-            ><img src="./assets/CASUAL.png" alt="" class="src"
-          /></a>
-        </div>
-        <div class="col-lg-4">
-          GYM
-          <a href="#" class="href"
-            ><img src="./assets/CASUAL.png" alt="" class="src"
-          /></a>
-        </div>
-      </div> -->
-    </div>
-    <hr />
-    <br /><br /><br /><br />
+    </section>
+    <!-- BROWSE BY DRESS STYLE Starts-->
 
     <!-- CUSTOMERS TESTIMONIALS -->
-    <div class="container">
-      <h1><strong>OUR HAPPY CUSTOMERS</strong></h1>
-    </div>
-    <br /><br /><br /><br />
+    <section class="section" id="section--4">
+      <div class="container">
+        <h1 class="my-5 customers"><strong>OUR HAPPY CUSTOMERS</strong></h1>
+      </div>
 
-    <div class="container">
-      <div class="owl-carousel owl-theme">
-        <div class="item">
-          <p>⭐⭐⭐⭐⭐</p>
-          <strong>Sarah M. ✅</strong>
-          <p class="text-muted">
-            "I'm blown away by the quality and style of the clothes I received
-            from Shop.co. From casual wear to elegant dresses, every piece I've
-            bought has exceeded my expectations.”
-          </p>
-        </div>
-        <div class="item">
-          <p>⭐⭐⭐⭐⭐</p>
-          <strong>Alex K. ✅</strong>
-          <p class="text-muted">
-            "Finding clothes that align with my personal style used to be a
-            challenge until I discovered Shop.co. The range of options they
-            offer is truly remarkable, catering to a variety of tastes and
-            occasions.”
-          </p>
-        </div>
-        <div class="item">
-          <p>⭐⭐⭐⭐⭐</p>
-          <strong>James L. ✅</strong>
-          <p class="text-muted">
-            "As someone who's always on the lookout for unique fashion pieces,
-            I'm thrilled to have stumbled upon Shop.co. The selection of clothes
-            is not only diverse but also on-point with the latest trends.”
-          </p>
-        </div>
-        <div class="item">
-          <p>⭐⭐⭐⭐⭐</p>
-          <strong>Mooen ✅</strong>
-          <p class="text-muted">
-            "I'm blown away by the quality and style of the clothes I received
-            from Shop.co. From casual wear to elegant dresses, every piece I've
-            bought has exceeded my expectations.”
-          </p>
-        </div>
-        <div class="item">
-          <p>⭐⭐⭐⭐⭐</p>
-          <strong>Aamir S.✅</strong>
-          <p class="text-muted">
-            "As someone who's always on the lookout for unique fashion pieces,
-            I'm thrilled to have stumbled upon Shop.co. The selection of clothes
-            is not only diverse but also on-point with the latest trends.”
-          </p>
+      <div class="container">
+        <div class="owl-carousel owl-theme">
+          <div class="item">
+            <p>⭐⭐⭐⭐⭐</p>
+            <strong>Sarah M. ✅</strong>
+            <p class="text-muted">
+              "I'm blown away by the quality and style of the clothes I received
+              from Shop.co. From casual wear to elegant dresses, every piece
+              I've bought has exceeded my expectations.”
+            </p>
+          </div>
+          <div class="item">
+            <p>⭐⭐⭐⭐⭐</p>
+            <strong>Alex K. ✅</strong>
+            <p class="text-muted">
+              "Finding clothes that align with my personal style used to be a
+              challenge until I discovered Shop.co. The range of options they
+              offer is truly remarkable, catering to a variety of tastes and
+              occasions.”
+            </p>
+          </div>
+          <div class="item">
+            <p>⭐⭐⭐⭐⭐</p>
+            <strong>James L. ✅</strong>
+            <p class="text-muted">
+              "As someone who's always on the lookout for unique fashion pieces,
+              I'm thrilled to have stumbled upon Shop.co. The selection of
+              clothes is not only diverse but also on-point with the latest
+              trends.”
+            </p>
+          </div>
+          <div class="item">
+            <p>⭐⭐⭐⭐⭐</p>
+            <strong>Mooen ✅</strong>
+            <p class="text-muted">
+              "I'm blown away by the quality and style of the clothes I received
+              from Shop.co. From casual wear to elegant dresses, every piece
+              I've bought has exceeded my expectations.”
+            </p>
+          </div>
+          <div class="item">
+            <p>⭐⭐⭐⭐⭐</p>
+            <strong>Aamir S.✅</strong>
+            <p class="text-muted">
+              "As someone who's always on the lookout for unique fashion pieces,
+              I'm thrilled to have stumbled upon Shop.co. The selection of
+              clothes is not only diverse but also on-point with the latest
+              trends.”
+            </p>
+          </div>
+          <div class="item">
+            <p>⭐⭐⭐⭐⭐</p>
+            <strong>Sarah M. ✅</strong>
+            <p class="text-muted">
+              "I'm blown away by the quality and style of the clothes I received
+              from Shop.co. From casual wear to elegant dresses, every piece
+              I've bought has exceeded my expectations.”
+            </p>
+          </div>
+          <div class="item">
+            <p>⭐⭐⭐⭐⭐</p>
+            <strong>Alex K. ✅</strong>
+            <p class="text-muted">
+              "Finding clothes that align with my personal style used to be a
+              challenge until I discovered Shop.co. The range of options they
+              offer is truly remarkable, catering to a variety of tastes and
+              occasions.”
+            </p>
+          </div>
+          <div class="item">
+            <p>⭐⭐⭐⭐⭐</p>
+            <strong>James L. ✅</strong>
+            <p class="text-muted">
+              "As someone who's always on the lookout for unique fashion pieces,
+              I'm thrilled to have stumbled upon Shop.co. The selection of
+              clothes is not only diverse but also on-point with the latest
+              trends.”
+            </p>
+          </div>
+          <div class="item">
+            <p>⭐⭐⭐⭐⭐</p>
+            <strong>Mooen ✅</strong>
+            <p class="text-muted">
+              "I'm blown away by the quality and style of the clothes I received
+              from Shop.co. From casual wear to elegant dresses, every piece
+              I've bought has exceeded my expectations.”
+            </p>
+          </div>
+          <div class="item">
+            <p>⭐⭐⭐⭐⭐</p>
+            <strong>Aamir S.✅</strong>
+            <p class="text-muted">
+              "As someone who's always on the lookout for unique fashion pieces,
+              I'm thrilled to have stumbled upon Shop.co. The selection of
+              clothes is not only diverse but also on-point with the latest
+              trends.”
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Subscription Starts -->
     <div class="container text-white p-5 subscription">
@@ -317,13 +390,19 @@
           </h1>
         </div>
         <div class="col-lg-6 text-center">
-          <!-- <i class="fa-solid fa-square-envelope fa-xl"></i> -->
-          <input
-            type="text"
-            placeholder="Enter Your E-Mail Address"
-            class="w-75 p-3 my-2 email"
-          />
-          <button class="w-75 p-3">
+          <div class="input-group mb-3 w-75 subscription__mail">
+            <div class="input-group-prepend">
+              <span class="input-group-text"
+                ><i class="fa-solid fa-square-envelope fa-xl"></i
+              ></span>
+            </div>
+            <input
+              type="text"
+              placeholder="Enter Your E-Mail Address"
+              class="form-control p-3 email"
+            />
+          </div>
+          <button class="w-75 p-3 btn__subscription">
             <strong>Subscribe to Newsletter</strong>
           </button>
         </div>
@@ -335,48 +414,73 @@
     <footer>
       <div class="container footer">
         <div class="row my-5">
-          <div class="col-lg-4">
-            <h1 class="footer_header"><strong>SHOP.CO</strong></h1>
-            <p class="">
+          <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+            <h1 class="footer_header mb-3"><strong>SHOP.CO</strong></h1>
+            <p class="text-start">
               We have clothes that suits your style and which you’re proud to
               wear. From women to men.
             </p>
-            <a href="#" class="p-2 social_icons"
-              ><i class="fa-brands fa-twitter"></i
+            <a
+              href="https://twitter.com/?lang=en"
+              target="_blank"
+              class="social_icons"
+              ><i class="p-2 mb-3 text-center fa-brands fa-twitter"></i
             ></a>
-            <a href="#" class="p-2 social_icons"
-              ><i class="fa-brands fa-facebook"></i
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              class="social_icons"
+              ><i class="p-2 mb-3 text-center fa-brands fa-facebook"></i
             ></a>
-            <a href="#" class="p-2 social_icons"
-              ><i class="fa-brands fa-instagram"></i
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              class="social_icons"
+              ><i class="p-2 mb-3 text-center fa-brands fa-instagram"></i
             ></a>
-            <a href="#" class="p-2 social_icons"
-              ><i class="fa-brands fa-github"></i
+            <a href="https://github.com/" target="_blank" class="social_icons"
+              ><i class="p-2 mb-3 text-center fa-brands fa-github"></i
             ></a>
           </div>
-          <div class="col-lg-2 text-center footer__titles__container">
-            <h5 class="footer__titles">COMPANY</h5>
+          <div
+            class="col-lg-2 col-md-3 col-sm-6 col-6 footer__titles__container"
+          >
+            <h5 class="mt-3 mb-12 fw-bolder footer__titles">
+              <strong>COMPANY</strong>
+            </h5>
             <p><a href="#" class="href">About</a></p>
             <p><a href="#" class="href">Feaures</a></p>
             <p><a href="#" class="href">Works</a></p>
             <p><a href="#" class="href">Careers</a></p>
           </div>
-          <div class="col-lg-2 text-center footer__titles__container">
-            <h5 class="footer__titles">HELP</h5>
-            <p><a href="##" class="href">Customer Support</a></p>
-            <p><a href="##" class="href">Delivery Details</a></p>
-            <p><a href="##" class="href">Terms & Conditions</a></p>
-            <p><a href="##" class="href">Privacy Policy</a></p>
+          <div
+            class="col-lg-2 col-md-3 col-sm-6 col-6 footer__titles__container"
+          >
+            <h5 class="mt-3 mb-12 fw-bolder footer__titles">
+              <strong>HELP</strong>
+            </h5>
+            <p><a href="#" class="href">Customer Support</a></p>
+            <p><a href="#" class="href">Delivery Details</a></p>
+            <p><a href="#" class="href">Terms & Conditions</a></p>
+            <p><a href="#" class="href">Privacy Policy</a></p>
           </div>
-          <div class="col-lg-2 text-center footer__titles__container">
-            <h5 class="footer__titles">FAQ</h5>
-            <p><a href="##" class="href">Account</a></p>
-            <p><a href="##" class="href">Manage Deliveries</a></p>
-            <p><a href="##" class="href">Orders</a></p>
-            <p><a href="##" class="href">Payments</a></p>
+          <div
+            class="col-lg-2 col-md-3 col-sm-6 col-6 footer__titles__container"
+          >
+            <h5 class="mt-3 mb-12 fw-bolder footer__titles">
+              <strong>FAQ</strong>
+            </h5>
+            <p><a href="#" class="href">Account</a></p>
+            <p><a href="#" class="href">Manage Deliveries</a></p>
+            <p><a href="#" class="href">Orders</a></p>
+            <p><a href="#" class="href">Payments</a></p>
           </div>
-          <div class="col-lg-2 text-center footer__titles__container">
-            <h5 class="footer__titles">RESOURCES</h5>
+          <div
+            class="col-lg-2 col-md-3 col-sm-6 col-6 footer__titles__container"
+          >
+            <h5 class="mt-3 mb-12 fw-bolder footer__titles">
+              <strong>RESOURCES</strong>
+            </h5>
             <p><a href="#" class="href">Free Clothes</a></p>
             <p><a href="#" class="href">Development Tutorial</a></p>
             <p><a href="#" class="href">How To Blog</a></p>
@@ -384,6 +488,7 @@
           </div>
         </div>
       </div>
+
       <!-- Footer Bottom Starts -->
       <div class="footer-bottom">
         <div class="container">
@@ -394,21 +499,33 @@
             <div class="col-sm-7">
               <ul>
                 <li>
-                  <a href="#"><i class="fa-brands fa-cc-visa fa-xl"></i></a>
+                  <a
+                    href="https://www.visa.co.in/pay-with-visa/find-a-card/credit-cards.html"
+                    target="_blank"
+                    ><i class="fa-brands fa-cc-visa fa-xl"></i
+                  ></a>
                 </li>
                 <li>
-                  <a href="#"
+                  <a
+                    href="https://www.mastercard.co.in/en-in.html"
+                    target="_blank"
                     ><i class="fa-brands fa-cc-mastercard fa-xl"></i
                   ></a>
                 </li>
                 <li>
-                  <a href="#"><i class="fa-brands fa-cc-paypal fa-xl"></i></a>
+                  <a href="https://www.paypal.com/in/home" target="_blank"
+                    ><i class="fa-brands fa-cc-paypal fa-xl"></i
+                  ></a>
                 </li>
                 <li>
-                  <a href="#"><i class="fa-brands fa-apple-pay fa-xl"></i></a>
+                  <a href="https://www.apple.com/apple-pay/" target="_blank"
+                    ><i class="fa-brands fa-apple-pay fa-xl"></i
+                  ></a>
                 </li>
                 <li>
-                  <a href="#"><i class="fa-brands fa-google-pay fa-xl"></i></a>
+                  <a href="https://pay.google.com/about/" target="_blank"
+                    ><i class="fa-brands fa-google-pay fa-xl"></i
+                  ></a>
                 </li>
               </ul>
             </div>
@@ -435,6 +552,7 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- OWL Carousel CDN -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -452,7 +570,6 @@
       $(".owl-carousel").owlCarousel({
         loop: true,
         margin: 15,
-        nav: true,
         responsive: {
           0: {
             items: 1,
@@ -466,6 +583,9 @@
         },
       });
     </script>
+
+    <!-- Sweer Alert CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./script.js"></script>
   </body>
 </html>
